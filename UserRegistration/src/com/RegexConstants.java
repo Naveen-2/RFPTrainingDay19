@@ -48,7 +48,11 @@ public class RegexConstants {
 
     /*
      A password needs to be at least 8 characters in it, so {8,0} is used to ensure that.
+     At least one special character. ^(?=.*[!@#$%^&*|'<>.-^*()%!])
+     And at least one number needs to be used. (?=.*[0-9])
+     And also at least one Upper case letter need to be entered for a valid password. (?=.*[A-Z])
+     There will not be any spaces and minimum 8 characters are used. [^\s]{8,}$
      */
-    public static final String PASSWORD_REGEX = "[a-zA-Z0-9!@#$%^&*_]{8,}$";
+    public static final String PASSWORD_REGEX = "^(?=.*[!@#$%^&*|'<>.-^*()%!])(?=.*[0-9])(?=.*[A-Z])[^\\s]{8,}$";
 
 }
